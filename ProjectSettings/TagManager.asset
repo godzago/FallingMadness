@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Controller
+  - puan
   layers:
   - Default
   - TransparentFX

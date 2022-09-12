@@ -13,7 +13,8 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float ForwardSpeed;
 
-    private bool fýrstTouchController;
+    public bool fýrstTouchController;
+    [SerializeField] GameManager gameManager;
 
     [SerializeField] GameObject LimitForwed;
     [SerializeField] GameObject LimitBack;
@@ -26,6 +27,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] GameObject FýnishPlayer;
     [SerializeField] GameObject FýnishPlayerLose;
     [SerializeField] GameObject Camera;
+    [SerializeField] GameObject City;
 
     bool GameOver = false;
     void Start()
@@ -38,6 +40,7 @@ public class PlayerMovment : MonoBehaviour
     }    
     void FixedUpdate()
     {
+
         if (speed <= 100f && fýrstTouchController == true)
         {
             speed += 0.2f;
@@ -46,19 +49,16 @@ public class PlayerMovment : MonoBehaviour
         if (Input.touchCount > 0)       
         {
             touch = Input.GetTouch(0);
-            
-            if (touch.phase == TouchPhase.Began)
-            {
-                animator.enabled = true;
-            }
+
+            animator.enabled = true;
 
             if (touch.phase == TouchPhase.Moved)
-            {              
+            {
+                fýrstTouchController = true;
+                Variables.FirstTouch = 1;
                 rgb.velocity = new Vector3(touch.deltaPosition.x * ForwardSpeed * Time.deltaTime,
                                          transform.position.y,
-                                         touch.deltaPosition.y * ForwardSpeed * Time.deltaTime);
-                Variables.FirstTouch = 1;
-                fýrstTouchController = true;
+                                         touch.deltaPosition.y * ForwardSpeed * Time.deltaTime);                      
             }
         }
         else if (touch.phase == TouchPhase.Ended)
@@ -74,7 +74,6 @@ public class PlayerMovment : MonoBehaviour
     private void Update()
     {
         SliderBar();
-
 
         if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {                     
@@ -100,6 +99,8 @@ public class PlayerMovment : MonoBehaviour
         {
             if (speed <= 100f)
             {
+                fýrstTouchController = false;
+                City.SetActive(true);
                 Camera.SetActive(false);
                 FýnishCamera.SetActive(true);
                 FýnishPlayer.SetActive(true);
@@ -107,11 +108,19 @@ public class PlayerMovment : MonoBehaviour
             }
             else
             {
+                GameOver = true;
+                fýrstTouchController = false;
+                City.SetActive(true);
                 Camera.SetActive(false);
                 FýnishCamera.SetActive(true);
                 FýnishPlayerLose.SetActive(true);
-                this.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);       
             }
+        }
+
+        if (other.gameObject.CompareTag("puan"))
+        {
+            gameManager.ScoreManager();
         }
     }
     private void SliderBar()

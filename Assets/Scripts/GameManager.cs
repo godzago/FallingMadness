@@ -5,11 +5,30 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    [SerializeField] PlayerMovment playerMovment;
     [SerializeField] float score;
 
-
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
-        score += 1 * Time.deltaTime ; 
+        if (playerMovment.fýrstTouchController == true && Variables.FirstTouch == 1)
+        {
+            score += 1 * Time.fixedDeltaTime;
+        }
+
+    }
+
+    public void ScoreManager()
+    {
+        score *= 1.15f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log(score);
+        }
     }
 }
+
+
