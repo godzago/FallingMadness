@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerMovment playerMovment;
     [SerializeField] float score;
+    private float LastScore;
 
     public void FixedUpdate()
     {
@@ -16,17 +17,18 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
     public void ScoreManager()
     {
-        score *= 1.15f;
+        LastScore += 2f;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log(score);
+           score *= LastScore;
+
+           Debug.Log("score " + score);
         }
     }
 }
