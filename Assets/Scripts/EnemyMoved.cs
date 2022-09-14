@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyMoved : MonoBehaviour
 {
-	[SerializeField] Transform firstPos, secondPos;
-	[SerializeField] float speed;
+    [SerializeField] Transform firstPos, secondPos;
+    [SerializeField] float speed;
 
-	Vector3 nextPos;
+    Vector3 nextPos;
 
     private void Start()
     {
