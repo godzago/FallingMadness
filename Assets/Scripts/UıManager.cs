@@ -15,8 +15,17 @@ public class UıManager : MonoBehaviour
     [SerializeField] GameObject iap;
     [SerializeField] GameObject information;
 
+    [SerializeField] GameObject next_button;
+    [SerializeField] GameObject rety_button;
+    [SerializeField] GameObject FınishCamera;
+    [SerializeField] GameObject FınishPlayer;
+    [SerializeField] GameObject FınishPlayerLose;
+    [SerializeField] GameObject Camera;
+    [SerializeField] GameObject City;
+
+
     private void Start()
-    {
+    {   
         if (PlayerPrefs.HasKey("Sound") == false)
         {
             PlayerPrefs.SetInt("Sound", 1);
@@ -77,4 +86,28 @@ public class UıManager : MonoBehaviour
         layoutAnimator.SetTrigger("Slider_out");
     }
 
+    public void winArea()
+    {
+        next_button.SetActive(true);
+        rety_button.SetActive(false);
+        City.SetActive(true);
+        Camera.SetActive(false);
+        FınishCamera.SetActive(true);
+        FınishPlayer.SetActive(true);
+    }
+
+    public void loseArea()
+    {
+        rety_button.SetActive(true);
+        next_button.SetActive(false);
+        City.SetActive(true);
+        Camera.SetActive(false);
+        FınishCamera.SetActive(true);
+        FınishPlayerLose.SetActive(true);
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

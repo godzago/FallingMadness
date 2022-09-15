@@ -15,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
 
     public bool fýrstTouchController;
     [SerializeField] GameManager gameManager;
+    [SerializeField] UýManager uýmanager;
 
     [SerializeField] GameObject LimitForwed;
     [SerializeField] GameObject LimitBack;
@@ -23,11 +24,7 @@ public class PlayerMovment : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField] GameObject FýnishCamera;
-    [SerializeField] GameObject FýnishPlayer;
-    [SerializeField] GameObject FýnishPlayerLose;
     [SerializeField] GameObject Camera;
-    [SerializeField] GameObject City;
 
     bool GameOver = false;
     void Start()
@@ -43,7 +40,7 @@ public class PlayerMovment : MonoBehaviour
 
         if (speed <= 100f && fýrstTouchController == true)
         {
-            speed += 0.2f;
+            speed += 0.23f;
         }
 
         if (Input.touchCount > 0)       
@@ -88,7 +85,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            speed -= 25f;
+            speed -= 20f;
             camershake.CameraShakesCall();
         }
     }
@@ -99,21 +96,15 @@ public class PlayerMovment : MonoBehaviour
         {
             if (speed <= 100f)
             {
+                uýmanager.winArea();
                 fýrstTouchController = false;
-                City.SetActive(true);
-                Camera.SetActive(false);
-                FýnishCamera.SetActive(true);
-                FýnishPlayer.SetActive(true);
                 this.gameObject.SetActive(false);
             }
             else
             {
+                uýmanager.loseArea();
                 GameOver = true;
                 fýrstTouchController = false;
-                City.SetActive(true);
-                Camera.SetActive(false);
-                FýnishCamera.SetActive(true);
-                FýnishPlayerLose.SetActive(true);
                 this.gameObject.SetActive(false);       
             }
         }

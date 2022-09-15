@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     [SerializeField] PlayerMovment playerMovment;
     [SerializeField] float score;
     private int LastScore;
-    public bool twoXtake;
+    [SerializeField] public bool twoXtake;
+
+    [SerializeField] Text text_score;
+    private int Puan;
+    private int scoreint;
 
     public void FixedUpdate()
     {
@@ -16,8 +20,8 @@ public class GameManager : MonoBehaviour
         {
            score += 2 * Time.fixedDeltaTime;
         }
-
     }
+
     public void ScoreManager()
     {
         LastScore += 2;
@@ -33,12 +37,16 @@ public class GameManager : MonoBehaviour
                 score *= LastScore;
 
                 Debug.Log("score " + score);
+
+                scoreint = Mathf.RoundToInt(score);
+
+                text_score.text = scoreint.ToString();
             }
             else
             {
                 Debug.Log("2x almamýs score " + score);
             }
-        }
+        }       
     }
 }
 
