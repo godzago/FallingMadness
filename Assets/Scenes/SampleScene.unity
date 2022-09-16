@@ -2953,8 +2953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec49e3f8afb35834e91a68c0e4ca9602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 817428110}
-  distance: {x: 0, y: 2.5, z: 0}
+  target: {fileID: 817428114}
+  distance: {x: 0, y: 2.5, z: -7}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
