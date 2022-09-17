@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 distance;
+    [SerializeField] public Transform target;
+    [SerializeField] public Vector3 distance;
+    [SerializeField] public float speed;
     private void LateUpdate()
     { 
         if (Variables.FirstTouch == 1)
         {
-            transform.position = target.position + distance;
+            this.transform.position = Vector3.Lerp(this.transform.position, target.transform.position + distance, Time.deltaTime * speed);         
         }      
+    }
+    public void FixedUpdate()
+    {
+        speed += 0.01f;
     }
 }

@@ -956,6 +956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 401042681205542667, guid: 85224bf356cfe82448c08dc458d156f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 401042681205542668, guid: 85224bf356cfe82448c08dc458d156f1,
         type: 3}
       propertyPath: m_RootOrder
@@ -1249,7 +1254,7 @@ PrefabInstance:
     - target: {fileID: 4815079266927833045, guid: 581dc44a3f2746d44b416af526548392,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7108299293839743995, guid: 581dc44a3f2746d44b416af526548392,
         type: 3}
@@ -1563,7 +1568,7 @@ PrefabInstance:
     - target: {fileID: 6031977968900175309, guid: 2ab6cb07f9dd21441ab08c74a704c981,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8341437946844955107, guid: 2ab6cb07f9dd21441ab08c74a704c981,
         type: 3}
@@ -2590,7 +2595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camershake: {fileID: 963194230}
   speed: 8
-  ForwardSpeed: 9
+  ForwardSpeed: 12
   "f\u0131rstTouchController": 0
   gameManager: {fileID: 409848562}
   "u\u0131manager": {fileID: 1029075661}
@@ -2797,7 +2802,7 @@ PrefabInstance:
     - target: {fileID: 1646612707992419394, guid: 6596f974a7449f042ae97efb8121d30c,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3940271543122561132, guid: 6596f974a7449f042ae97efb8121d30c,
         type: 3}
@@ -2954,7 +2959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 817428114}
-  distance: {x: 0, y: 2.5, z: -7}
+  distance: {x: 0, y: 2.5, z: -2}
+  speed: 5
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,7 +3294,7 @@ PrefabInstance:
     - target: {fileID: 1646612707992419394, guid: 6596f974a7449f042ae97efb8121d30c,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3940271543122561132, guid: 6596f974a7449f042ae97efb8121d30c,
         type: 3}
@@ -6394,7 +6400,7 @@ PrefabInstance:
     - target: {fileID: 4815079266927833045, guid: 581dc44a3f2746d44b416af526548392,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7108299293839743995, guid: 581dc44a3f2746d44b416af526548392,
         type: 3}
@@ -7362,6 +7368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_05
       objectReference: {fileID: 0}
+    - target: {fileID: 3162932326399790576, guid: 3f36e91063192314fa3c6435894db4b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3162932326399790583, guid: 3f36e91063192314fa3c6435894db4b8,
         type: 3}
       propertyPath: m_RootOrder
@@ -7499,6 +7510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581617666463321899, guid: 3c9bd42e74c925548bb6925909bb0ef5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7581617666463321900, guid: 3c9bd42e74c925548bb6925909bb0ef5,
         type: 3}
@@ -7657,6 +7673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 401042681205542667, guid: 85224bf356cfe82448c08dc458d156f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 401042681205542668, guid: 85224bf356cfe82448c08dc458d156f1,
         type: 3}
