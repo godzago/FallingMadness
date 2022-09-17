@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
                 scoreint = Mathf.RoundToInt(score);
 
                 text_score.text = scoreint.ToString();
+
+                PlayerPrefs.SetFloat("TotalScore", score);
             }
             else
             {
