@@ -6,14 +6,15 @@ public class CamerShake : MonoBehaviour
 {
     public IEnumerator CameraShakesEffect(float duraiton, float magnitude)
     {
+
         Vector3 orginalPos = transform.localPosition;
 
         float elapsed = 0.0f;
 
         while (elapsed < duraiton)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            float x = Random.Range(-1.15f, 1.15f) * magnitude;
+            float y = Random.Range(-1.15f, 1.15f) * magnitude;
 
             transform.localPosition = new Vector3(x, y, orginalPos.z);
 
@@ -26,6 +27,6 @@ public class CamerShake : MonoBehaviour
 
     public void CameraShakesCall()
     {
-        StartCoroutine(CameraShakesEffect(0.05f, 0.06f));
+        StartCoroutine(CameraShakesEffect(0.07f, 0.07f));
     }
 }
