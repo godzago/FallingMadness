@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
     private int Puan;
     private int scoreint;
 
+    [SerializeField] ParticleSystem particlesystem;
+
+    private void Awake()
+    {
+        particlesystem.Stop();
+    }
+
     public void FixedUpdate()
     {
         if (playerMovment.fýrstTouchController == true && Variables.FirstTouch == 1)
@@ -26,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         LastScore += 2;
         twoXtake = true;
+        particlesystem.Play();
     }
 
     private void OnTriggerEnter(Collider other)
