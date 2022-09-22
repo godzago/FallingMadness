@@ -27,13 +27,19 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] GameObject Camera;
 
     bool GameOver = false;
+    [SerializeField] StartEpisote startEpisote;
     void Start()
     {       
         rgb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         animator.enabled = false;
-        Camera.SetActive(true);
         this.gameObject.SetActive(true);
+
+        if (PlayerPrefs.GetInt("Game") == 2)
+        {
+            startEpisote.startepisode();
+            Camera.SetActive(true);
+        }
     }    
     void FixedUpdate()
     {
@@ -48,7 +54,6 @@ public class PlayerMovment : MonoBehaviour
             touch = Input.GetTouch(0);
 
             animator.enabled = true;
-
             if (touch.phase == TouchPhase.Moved)
             {
                 fýrstTouchController = true;

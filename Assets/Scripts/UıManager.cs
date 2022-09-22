@@ -23,7 +23,9 @@ public class UıManager : MonoBehaviour
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject City;
 
-
+    [SerializeField] PlayerMovment playerMovment;
+    [SerializeField] GameObject StartUI;
+    [SerializeField] GameObject StartCamera;
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -104,6 +106,11 @@ public class UıManager : MonoBehaviour
         Camera.SetActive(false);
         FınishCamera.SetActive(true);
         FınishPlayerLose.SetActive(true);
+    }
+
+    public void StartArea()
+    {
+       
     }
 
     public void restartGame()
