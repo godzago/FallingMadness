@@ -108,11 +108,6 @@ public class UıManager : MonoBehaviour
         FınishPlayerLose.SetActive(true);
     }
 
-    public void StartArea()
-    {
-       
-    }
-
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

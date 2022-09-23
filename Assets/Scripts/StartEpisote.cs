@@ -10,7 +10,8 @@ public class StartEpisote : MonoBehaviour
     [SerializeField] GameObject startCamera;
     [SerializeField] GameObject StartPlayer;
     [SerializeField] GameObject startUI;
-    public bool Startepisode;
+    [SerializeField] GameObject SliderGameObject;
+    [SerializeField] bool Startepisode;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class StartEpisote : MonoBehaviour
             StartPlayer.SetActive(false);
             startUI.SetActive(false);
             Startepisode = true;
+            SliderGameObject.SetActive(true);
             PlayerPrefs.SetInt("Game", 2);
         }
         else
@@ -45,5 +47,6 @@ public class StartEpisote : MonoBehaviour
         Cameras.SetActive(true);
         StartPlayer.SetActive(false);
         startUI.SetActive(false);
+        SliderGameObject.SetActive(true);
     }
 }

@@ -27,6 +27,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] GameObject Camera;
 
     bool GameOver = false;
+
     [SerializeField] StartEpisote startEpisote;
     void Start()
     {       
