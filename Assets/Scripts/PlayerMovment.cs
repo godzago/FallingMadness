@@ -15,7 +15,7 @@ public class PlayerMovment : MonoBehaviour
 
     public bool fýrstTouchController;
     [SerializeField] GameManager gameManager;
-    [SerializeField] UýManager uýmanager;
+    [SerializeField] UIManager UImanager;
 
     [SerializeField] GameObject LimitForwed;
     [SerializeField] GameObject LimitBack;
@@ -29,8 +29,10 @@ public class PlayerMovment : MonoBehaviour
     bool GameOver = false;
 
     [SerializeField] StartEpisote startEpisote;
+
+    public int level;
     void Start()
-    {       
+    {
         rgb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         animator.enabled = false;
@@ -102,13 +104,13 @@ public class PlayerMovment : MonoBehaviour
         {
             if (speed <= 100f)
             {
-                uýmanager.winArea();
+                UImanager.winArea();
                 fýrstTouchController = false;
                 this.gameObject.SetActive(false);
             }
             else
             {
-                uýmanager.loseArea();
+                UImanager.loseArea();
                 GameOver = true;
                 fýrstTouchController = false;
                 this.gameObject.SetActive(false);       

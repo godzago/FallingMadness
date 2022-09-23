@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class UıManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] Animator layoutAnimator;
 
@@ -23,9 +23,7 @@ public class UıManager : MonoBehaviour
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject City;
 
-    [SerializeField] PlayerMovment playerMovment;
-    [SerializeField] GameObject StartUI;
-    [SerializeField] GameObject StartCamera;
+    public static int level;
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -112,4 +110,23 @@ public class UıManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void NextGame()
+    {
+        level += 1;
+
+        Debug.Log("level  " + level);
+
+        SceneManager.LoadScene(level);       
+    }
+
+//    public void LoadTheLevel()
+//    {
+//        if (Player.level2 == 2)
+//        {
+//            levelGenerate = Random.Range(2, 6);
+//            SceneManager.LoadScene(levelGenerate);
+//        }
+//    }
+//
 }

@@ -12,7 +12,6 @@ public class StartEpisote : MonoBehaviour
     [SerializeField] GameObject startUI;
     [SerializeField] GameObject SliderGameObject;
     [SerializeField] bool Startepisode;
-
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Game") == false)
@@ -40,7 +39,6 @@ public class StartEpisote : MonoBehaviour
             startUI.SetActive(false);
         }
     }
-
     public void startepisode()
     {
         startCamera.SetActive(false);

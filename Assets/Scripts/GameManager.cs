@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     private int scoreint;
 
     [SerializeField] ParticleSystem particlesystem;
-
     private void Awake()
     {
         particlesystem.Stop();
@@ -42,6 +41,7 @@ public class GameManager : MonoBehaviour
         {          
             if (twoXtake == true)
             {
+
                 score *= LastScore;
 
                 Debug.Log("score " + score);
