@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         {
             sound_on.SetActive(true);
             sound_off.SetActive(false);
-            AudioListener.volume = 1;
+            AudioListener.volume = 0.5f;
         }
 
         if (PlayerPrefs.GetInt("Sound") == 2)
@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
     {
         sound_on.SetActive(true);
         sound_off.SetActive(false);
-        AudioListener.volume = 1;
+        AudioListener.volume = 0.5f;
         PlayerPrefs.SetInt("Sound", 1);
     }
 
