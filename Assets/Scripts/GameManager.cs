@@ -11,13 +11,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool twoXtake;
 
     [SerializeField] Text text_score;
-    private int Puan;
+
+    private float Puan;
     private int scoreint;
 
     [SerializeField] ParticleSystem particlesystem;
     private void Awake()
     {
         particlesystem.Stop();
+    }
+
+    private void Start()
+    {
+        PlayerPrefs.GetFloat("TotalScore", Puan);
+
+        Debug.Log("paun start : " + Puan);
     }
 
     public void FixedUpdate()
@@ -38,19 +46,24 @@ public class GameManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {          
+        {
             if (twoXtake == true)
             {
-
                 score *= LastScore;
 
                 Debug.Log("score " + score);
+              
+                score += Puan;
 
                 scoreint = Mathf.RoundToInt(score);
 
                 text_score.text = scoreint.ToString();
 
-                PlayerPrefs.SetFloat("TotalScore", score);
+                score = Puan;
+
+                Debug.Log("paun " + Puan);
+
+                PlayerPrefs.SetFloat("TotalScore", Puan);
             }
             else
             {

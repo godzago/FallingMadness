@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject FınishPlayerLose;
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject City;
+    [SerializeField] int levelGenerate;
 
     public static int level;
     private void Start()
@@ -113,20 +114,18 @@ public class UIManager : MonoBehaviour
 
     public void NextGame()
     {
-        level += 1;
+        if (level == 4)
+        {
+            levelGenerate = Random.Range(0, 4);
+            SceneManager.LoadScene(levelGenerate);
+        }
+        else
+        {
+            level += 1;
 
-        Debug.Log("level  " + level);
+            Debug.Log("level  " + level);
 
-        SceneManager.LoadScene(level);       
+            SceneManager.LoadScene(level);
+        }           
     }
-
-//    public void LoadTheLevel()
-//    {
-//        if (Player.level2 == 2)
-//        {
-//            levelGenerate = Random.Range(2, 6);
-//            SceneManager.LoadScene(levelGenerate);
-//        }
-//    }
-//
 }
