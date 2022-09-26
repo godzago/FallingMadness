@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool twoXtake;
 
     [SerializeField] Text text_score;
+    [SerializeField] Text live_score;
 
-    private float Puan;
+    static float Puan;
     private int scoreint;
+    private int live_score_int;
 
     [SerializeField] ParticleSystem particlesystem;
     private void Awake()
@@ -23,9 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.GetFloat("TotalScore", Puan);
-
-        Debug.Log("paun start : " + Puan);
+        //PlayerPrefs.GetFloat("totatScore", Puan);
     }
 
     public void FixedUpdate()
@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
            score += 2 * Time.fixedDeltaTime;
         }
+
+        live_score_int = Mathf.RoundToInt(score);
+
+        live_score.text = live_score_int.ToString();
     }
 
     public void ScoreManager()
@@ -49,21 +53,22 @@ public class GameManager : MonoBehaviour
         {
             if (twoXtake == true)
             {
-                score *= LastScore;
+                score *= LastScore;             
+
+               // scoreint = Mathf.RoundToInt(Puan);
+                
+               // text_score.text = scoreint.ToString();
+
+
+                Puan += score;
+
+                scoreint = Mathf.RoundToInt(Puan);
+
+                text_score.text = scoreint.ToString();                
+
+                //PlayerPrefs.SetFloat("totatScore", Puan);
 
                 Debug.Log("score " + score);
-              
-                score += Puan;
-
-                scoreint = Mathf.RoundToInt(score);
-
-                text_score.text = scoreint.ToString();
-
-                score = Puan;
-
-                Debug.Log("paun " + Puan);
-
-                PlayerPrefs.SetFloat("TotalScore", Puan);
             }
             else
             {
