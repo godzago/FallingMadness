@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
         particlesystem.Stop();
     }
 
-    private void Start()
-    {
-        //PlayerPrefs.GetFloat("totatScore", Puan);
-    }
-
     public void FixedUpdate()
     {
         if (playerMovment.fýrstTouchController == true && Variables.FirstTouch == 1)
@@ -65,8 +60,6 @@ public class GameManager : MonoBehaviour
                 scoreint = Mathf.RoundToInt(Puan);
 
                 text_score.text = scoreint.ToString();                
-
-                //PlayerPrefs.SetFloat("totatScore", Puan);
 
                 Debug.Log("score " + score);
             }

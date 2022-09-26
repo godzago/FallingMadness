@@ -12,6 +12,8 @@ public class StartEpisote : MonoBehaviour
     [SerializeField] GameObject startUI;
     [SerializeField] GameObject SliderGameObject;
     [SerializeField] bool Startepisode;
+    [SerializeField] GameObject LiveScore;
+
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Game") == false)
@@ -28,7 +30,7 @@ public class StartEpisote : MonoBehaviour
             StartPlayer.SetActive(false);
             startUI.SetActive(false);
             Startepisode = true;
-            SliderGameObject.SetActive(true);
+            SliderGameObject.SetActive(true);            
             PlayerPrefs.SetInt("Game", 2);
         }
         else
@@ -36,7 +38,7 @@ public class StartEpisote : MonoBehaviour
             startCamera.SetActive(false);
             Cameras.SetActive(true);
             StartPlayer.SetActive(false);
-            startUI.SetActive(false);
+            startUI.SetActive(false);         
         }
     }
     public void startepisode()
@@ -46,5 +48,6 @@ public class StartEpisote : MonoBehaviour
         StartPlayer.SetActive(false);
         startUI.SetActive(false);
         SliderGameObject.SetActive(true);
+        LiveScore.SetActive(true);
     }
 }
