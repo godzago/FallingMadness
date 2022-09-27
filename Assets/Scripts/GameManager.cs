@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
            score += 2 * Time.fixedDeltaTime;
         }
 
-        live_score_int = Mathf.RoundToInt(score);
+       live_score_int = Mathf.RoundToInt(score);
 
         live_score.text = live_score_int.ToString();
     }
@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
                 
                // text_score.text = scoreint.ToString();
 
-
                 Puan += score;
 
                 scoreint = Mathf.RoundToInt(Puan);
@@ -65,6 +64,12 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Puan += score;
+
+                scoreint = Mathf.RoundToInt(Puan);
+
+                text_score.text = scoreint.ToString();
+
                 Debug.Log("2x almamýs score " + score);
             }
         }       

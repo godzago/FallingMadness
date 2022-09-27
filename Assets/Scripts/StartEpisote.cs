@@ -11,26 +11,26 @@ public class StartEpisote : MonoBehaviour
     [SerializeField] GameObject StartPlayer;
     [SerializeField] GameObject startUI;
     [SerializeField] GameObject SliderGameObject;
-    [SerializeField] bool Startepisode;
+    public bool Stardepisode;
     [SerializeField] GameObject LiveScore;
 
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Game") == false)
         {
-            PlayerPrefs.SetInt("Game", 1);
+          PlayerPrefs.SetInt("Game", 1);
         }
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (Startepisode == false)
+        if (Stardepisode == false)
         {
             startCamera.SetActive(false);
             Cameras.SetActive(true);
             StartPlayer.SetActive(false);
-            startUI.SetActive(false);
-            Startepisode = true;
-            SliderGameObject.SetActive(true);            
+            startUI.SetActive(false);           
+            SliderGameObject.SetActive(true);
+            Stardepisode = true;
             PlayerPrefs.SetInt("Game", 2);
         }
         else

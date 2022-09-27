@@ -38,7 +38,8 @@ public class PlayerMovment : MonoBehaviour
         animator.enabled = false;
         this.gameObject.SetActive(true);
 
-        if (PlayerPrefs.GetInt("Game") == 2)
+
+        if (startEpisote.Stardepisode == true)
         {
             startEpisote.startepisode();
             Camera.SetActive(true);
