@@ -27,7 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 7581617666837582265}
   secondPos: {fileID: 7581617667334434573}
-  speed: 7
+  speed: 14
 --- !u!1 &7581617666463321899
 GameObject:
   m_ObjectHideFlags: 0

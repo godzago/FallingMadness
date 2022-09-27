@@ -28,9 +28,7 @@ public class PlayerMovment : MonoBehaviour
 
     bool GameOver = false;
 
-    [SerializeField] StartEpisote startEpisote;
-
-    public int level;
+    [SerializeField] StartEpisote start_scene;
     void Start()
     {
         rgb = GetComponent<Rigidbody>();
@@ -39,12 +37,13 @@ public class PlayerMovment : MonoBehaviour
         this.gameObject.SetActive(true);
 
 
-        if (startEpisote.Stardepisode == true)
+        if (Variables.StartScne == 1) 
         {
-            startEpisote.startepisode();
+            start_scene.startepisode();
             Camera.SetActive(true);
         }
     }    
+
     void FixedUpdate()
     {
 

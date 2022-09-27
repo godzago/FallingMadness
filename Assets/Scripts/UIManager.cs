@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject City;
     [SerializeField] int levelGenerate;
 
-    public static int level;
+    //public static int level;
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -114,18 +114,18 @@ public class UIManager : MonoBehaviour
 
     public void NextGame()
     {
-        if (level == 4)
+        if (Variables.Level == 4)
         {
             levelGenerate = Random.Range(0, 4);
             SceneManager.LoadScene(levelGenerate);
         }
         else
         {
-            level += 1;
+            Variables.Level += 1;
 
-            Debug.Log("level  " + level);
+            Debug.Log("level  " + Variables.Level);
 
-            SceneManager.LoadScene(level);
+            SceneManager.LoadScene(Variables.Level);
         }           
     }
 }
