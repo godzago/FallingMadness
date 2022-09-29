@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject City;
     [SerializeField] int levelGenerate;
     [SerializeField] GameObject live_score;
+    [SerializeField] GameObject currentPlayer;
 
     private void Start()
     {   
@@ -31,6 +32,8 @@ public class UIManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Sound", 1);
         }
+
+        currentPlayer.SetActive(true);
     }
 
     public void Settings_Open()
@@ -89,6 +92,7 @@ public class UIManager : MonoBehaviour
 
     public void winArea()
     {
+        currentPlayer.SetActive(false);
         next_button.SetActive(true);
         rety_button.SetActive(false);
         City.SetActive(true);
@@ -100,6 +104,7 @@ public class UIManager : MonoBehaviour
 
     public void loseArea()
     {
+        currentPlayer.SetActive(false);
         rety_button.SetActive(true);
         next_button.SetActive(false);
         City.SetActive(true);

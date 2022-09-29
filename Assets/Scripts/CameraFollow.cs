@@ -16,6 +16,6 @@ public class CameraFollow : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        speed += 0.01f;
+        speed += 0.012f;
     }
 }

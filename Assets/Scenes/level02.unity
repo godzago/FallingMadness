@@ -3098,8 +3098,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1.223999}
-  m_Center: {x: 0, y: 0, z: 0.11199951}
+  m_Size: {x: 1.6383667, y: 1.8300962, z: 1.223999}
+  m_Center: {x: 0.09483659, y: 0.4150467, z: 0.11199951}
 --- !u!114 &409848562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5686,7 +5686,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0.6
+  m_ShadowAngle: 0
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -8422,6 +8422,7 @@ MonoBehaviour:
   City: {fileID: 1488785153}
   levelGenerate: 0
   live_score: {fileID: 1257869082}
+  currentPlayer: {fileID: 817428110}
 --- !u!1 &1037051343
 GameObject:
   m_ObjectHideFlags: 0

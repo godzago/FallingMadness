@@ -93,7 +93,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            speed -= 20f;
+            speed -= 25f;
             camershake.CameraShakesCall();
         }
     }
