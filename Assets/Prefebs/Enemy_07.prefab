@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 7848528501390628042}
   secondPos: {fileID: 7848528500805839486}
-  speed: 12
+  speed: 11
 --- !u!95 &4164835300712114552
 Animator:
   serializedVersion: 3

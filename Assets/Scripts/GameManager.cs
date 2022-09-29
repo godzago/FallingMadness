@@ -50,17 +50,13 @@ public class GameManager : MonoBehaviour
             {
                 score *= LastScore;             
 
-               // scoreint = Mathf.RoundToInt(Puan);
-                
-               // text_score.text = scoreint.ToString();
-
                 Puan += score;
 
                 scoreint = Mathf.RoundToInt(Puan);
 
                 text_score.text = scoreint.ToString();                
 
-                Debug.Log("score " + score);
+                // Debug.Log("score " + score);
             }
             else
             {
@@ -70,7 +66,7 @@ public class GameManager : MonoBehaviour
 
                 text_score.text = scoreint.ToString();
 
-                Debug.Log("2x almamýs score " + score);
+               // Debug.Log("2x almamýs score " + score);
             }
         }       
     }

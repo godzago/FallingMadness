@@ -23,8 +23,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject City;
     [SerializeField] int levelGenerate;
+    [SerializeField] GameObject live_score;
 
-    //public static int level;
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour
         Camera.SetActive(false);
         FınishCamera.SetActive(true);
         FınishPlayer.SetActive(true);
+        live_score.SetActive(false);
     }
 
     public void loseArea()
@@ -105,6 +106,7 @@ public class UIManager : MonoBehaviour
         Camera.SetActive(false);
         FınishCamera.SetActive(true);
         FınishPlayerLose.SetActive(true);
+        live_score.SetActive(false);
     }
 
     public void restartGame()
@@ -114,16 +116,14 @@ public class UIManager : MonoBehaviour
 
     public void NextGame()
     {
-        if (Variables.Level == 4)
+        if (Variables.Level == 6)
         {
-            levelGenerate = Random.Range(0, 4);
+            levelGenerate = Random.Range(0, 6);
             SceneManager.LoadScene(levelGenerate);
         }
         else
         {
             Variables.Level += 1;
-
-            Debug.Log("level  " + Variables.Level);
 
             SceneManager.LoadScene(Variables.Level);
         }           

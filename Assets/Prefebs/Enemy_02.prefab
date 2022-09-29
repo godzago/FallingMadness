@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 6031977970245629415}
   secondPos: {fileID: 6031977970443456891}
-  speed: 15
+  speed: 8
 --- !u!1001 &7806339058452011459
 PrefabInstance:
   m_ObjectHideFlags: 0
