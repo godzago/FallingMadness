@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CamerShake : MonoBehaviour
 {
+    [SerializeField] AnimationCurve curve;
+
     public IEnumerator CameraShakesEffect(float duraiton, float magnitude)
     {
 
@@ -16,6 +18,7 @@ public class CamerShake : MonoBehaviour
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
+            float strength = curve.Evaluate(elapsed / duraiton);
             transform.localPosition = new Vector3(x, y, orginalPos.z);
 
             elapsed += Time.deltaTime;
@@ -27,6 +30,7 @@ public class CamerShake : MonoBehaviour
 
     public void CameraShakesCall()
     {
-        StartCoroutine(CameraShakesEffect(0.22f, 0.34f));
+        StartCoroutine(CameraShakesEffect(0.2f , 1f));
     }
+  
 }

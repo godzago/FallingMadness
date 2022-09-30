@@ -36,7 +36,6 @@ public class PlayerMovment : MonoBehaviour
         animator.enabled = false;
         this.gameObject.SetActive(true);
 
-
         if (Variables.StartScne == 1) 
         {
             start_scene.startepisode();
@@ -75,11 +74,6 @@ public class PlayerMovment : MonoBehaviour
         {
             rgb.velocity = Vector3.zero;
         }
-
-        if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
-        {
-            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);        
-        }
     }
 
     private void Update()
@@ -88,17 +82,9 @@ public class PlayerMovment : MonoBehaviour
 
         if(Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {
+            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitForwed.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitBack.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            speed -= 25f;
-            camershake.CameraShakesCall();
         }
     }
 
@@ -124,6 +110,12 @@ public class PlayerMovment : MonoBehaviour
         if (other.gameObject.CompareTag("puan"))
         {
             gameManager.ScoreManager();
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            speed -= 25f;
+            camershake.CameraShakesCall();
         }
     }
     private void SliderBar()

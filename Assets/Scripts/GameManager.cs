@@ -55,8 +55,6 @@ public class GameManager : MonoBehaviour
 
                 text_score.text = scoreint.ToString();                
 
-                // Debug.Log("score " + score);
-
                 Puan += score;
 
                 scoreint = Mathf.RoundToInt(Puan);
