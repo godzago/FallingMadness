@@ -45,11 +45,10 @@ public class GameManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
-            if (twoXtake == true)
-            {
+        {            
+                if(twoXtake == true)
                 score *= LastScore;             
-
+                else
                 Puan += score;
 
                 scoreint = Mathf.RoundToInt(Puan);
@@ -57,19 +56,32 @@ public class GameManager : MonoBehaviour
                 text_score.text = scoreint.ToString();                
 
                 // Debug.Log("score " + score);
-            }
-            else
-            {
+
                 Puan += score;
 
                 scoreint = Mathf.RoundToInt(Puan);
 
                 text_score.text = scoreint.ToString();
-
-               // Debug.Log("2x almamýs score " + score);
-            }
         }       
     }
 }
+//if (twoXtake == true)
+//{
+//    score *= LastScore;
 
+//    Puan += score;
+
+//    scoreint = Mathf.RoundToInt(Puan);
+
+//    text_score.text = scoreint.ToString();
+
+//    // Debug.Log("score " + score);
+//}
+//else
+//{
+//    Puan += score;
+
+//    scoreint = Mathf.RoundToInt(Puan);
+
+//    text_score.text = scoreint.ToString();
 

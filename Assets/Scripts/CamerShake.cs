@@ -27,6 +27,6 @@ public class CamerShake : MonoBehaviour
 
     public void CameraShakesCall()
     {
-        StartCoroutine(CameraShakesEffect(0.12f, 0.2f));
+        StartCoroutine(CameraShakesEffect(0.22f, 0.34f));
     }
 }

@@ -66,6 +66,7 @@ public class PlayerMovment : MonoBehaviour
                                          touch.deltaPosition.y * ForwardSpeed * Time.deltaTime);                      
             }
         }
+
         else if (touch.phase == TouchPhase.Ended)
         {
             rgb.velocity = Vector3.zero;
@@ -74,19 +75,22 @@ public class PlayerMovment : MonoBehaviour
         {
             rgb.velocity = Vector3.zero;
         }
+
+        if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
+        {
+            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);        
+        }
     }
 
     private void Update()
     {
         SliderBar();
 
-        if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
-        {                     
-            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
-
+        if(Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
+        {
             LimitForwed.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitBack.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
-        }   
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
