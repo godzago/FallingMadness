@@ -44,7 +44,15 @@ public class PlayerMovment : MonoBehaviour
             start_scene.startepisode();
             Camera.SetActive(true);
         }
-    }    
+    }
+
+    private void FixedUpdate()
+    {
+        if (speed <= 100f && fýrstTouchController == true)
+        {
+            speed += 0.23f;
+        }
+    }
 
     void Update()
     {
@@ -57,6 +65,7 @@ public class PlayerMovment : MonoBehaviour
             {
                 fýrstTouchController = true;
                 Variables.FirstTouch = 1;
+
                 rgb.velocity = new Vector3(touch.deltaPosition.x * ForwardSpeed * Time.deltaTime,
                                          transform.position.y,
                                          touch.deltaPosition.y * ForwardSpeed * Time.deltaTime);                      
@@ -71,20 +80,13 @@ public class PlayerMovment : MonoBehaviour
         {
             rgb.velocity = Vector3.zero;
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (speed <= 100f && fýrstTouchController == true)
-        {
-            speed += 0.23f;
-        }
         SliderBar();
 
 
-        if(Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
+        if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {
-            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+            gameObject.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
             LimitForwed.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitBack.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
         }
