@@ -29,8 +29,11 @@ public class PlayerMovment : MonoBehaviour
     bool GameOver = false;
 
     [SerializeField] StartEpisote start_scene;
+
+    [SerializeField] ParticleSystem particle;
     void Start()
     {
+        particle.Stop();
         rgb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         animator.enabled = false;
@@ -43,14 +46,8 @@ public class PlayerMovment : MonoBehaviour
         }
     }    
 
-    void FixedUpdate()
+    void Update()
     {
-
-        if (speed <= 100f && fýrstTouchController == true)
-        {
-            speed += 0.23f;
-        }
-
         if (Input.touchCount > 0)       
         {
             touch = Input.GetTouch(0);
@@ -76,9 +73,14 @@ public class PlayerMovment : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (speed <= 100f && fýrstTouchController == true)
+        {
+            speed += 0.23f;
+        }
         SliderBar();
+
 
         if(Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {
@@ -116,6 +118,8 @@ public class PlayerMovment : MonoBehaviour
         {
             speed -= 25f;
             camershake.CameraShakesCall();
+            particle.transform.position = gameObject.transform.position;
+            particle.Play();
         }
     }
     private void SliderBar()
