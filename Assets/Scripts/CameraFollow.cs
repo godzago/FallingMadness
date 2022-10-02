@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] public Transform target;
     [SerializeField] public Vector3 distance;
     [SerializeField] public float speed;
-    private void LateUpdate()
+    private void Update()
     { 
         if (Variables.FirstTouch == 1)
         {
