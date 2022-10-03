@@ -112,6 +112,7 @@ public class UIManager : MonoBehaviour
         FınishCamera.SetActive(true);
         FınishPlayerLose.SetActive(true);
         live_score.SetActive(false);
+        GameManager.Puan = 0;
     }
 
     public void restartGame()

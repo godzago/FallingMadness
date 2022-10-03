@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerMovment playerMovment;
@@ -13,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text text_score;
     [SerializeField] Text live_score;
 
-    static float Puan;
+    public static float Puan;
     private int scoreint;
     private int live_score_int;
 
@@ -37,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void ScoreManager()
     {
-        LastScore += 2;
+        LastScore += 1;
         twoXtake = true;
         particlesystem.Play();
     }
@@ -63,23 +62,3 @@ public class GameManager : MonoBehaviour
         }       
     }
 }
-//if (twoXtake == true)
-//{
-//    score *= LastScore;
-
-//    Puan += score;
-
-//    scoreint = Mathf.RoundToInt(Puan);
-
-//    text_score.text = scoreint.ToString();
-
-//    // Debug.Log("score " + score);
-//}
-//else
-//{
-//    Puan += score;
-
-//    scoreint = Mathf.RoundToInt(Puan);
-
-//    text_score.text = scoreint.ToString();
-

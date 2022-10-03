@@ -47,7 +47,7 @@ public class PlayerMovment : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {       
         if (speed <= 100f && fýrstTouchController == true)
         {
             speed += 0.23f;
@@ -57,12 +57,12 @@ public class PlayerMovment : MonoBehaviour
     void Update()
     {
         if (Input.touchCount > 0)       
-        {
+        {           
             touch = Input.GetTouch(0);
 
             animator.enabled = true;
             if (touch.phase == TouchPhase.Moved)
-            {
+            {            
                 fýrstTouchController = true;
                 Variables.FirstTouch = 1;
 
@@ -118,10 +118,10 @@ public class PlayerMovment : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            speed -= 25f;
-            camershake.CameraShakesCall();
+            speed -= 25f;            
             particle.transform.position = gameObject.transform.position;
             particle.Play();
+            camershake.CameraShakesCall();
         }
     }
     private void SliderBar()
