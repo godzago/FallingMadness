@@ -6290,7 +6290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camershake: {fileID: 963194230}
   speed: 8
-  ForwardSpeed: 12
+  ForwardSpeed: 60
   "f\u0131rstTouchController": 0
   gameManager: {fileID: 409848562}
   UImanager: {fileID: 1029075661}
