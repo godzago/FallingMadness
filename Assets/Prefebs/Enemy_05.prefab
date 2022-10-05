@@ -28,6 +28,8 @@ MonoBehaviour:
   firstPos: {fileID: 3162932325662911958}
   secondPos: {fileID: 3162932325085975394}
   speed: 6
+  particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
+    type: 3}
 --- !u!1 &3162932325085975395
 GameObject:
   m_ObjectHideFlags: 0

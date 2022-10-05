@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerMovment : MonoBehaviour
 {
-    [SerializeField] CamerShake camershake;
-
     private Rigidbody rgb;
     private Touch touch;
 
@@ -20,7 +18,10 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] GameObject LimitForwed;
     [SerializeField] GameObject LimitBack;
 
-    [SerializeField] Slider mySlider;
+    public Slider mySlider;
+    public float maxDistance;
+    public GameObject finisLine;
+    public Transform myCharactertransform;
 
     private Animator animator;
 
@@ -30,10 +31,9 @@ public class PlayerMovment : MonoBehaviour
 
     [SerializeField] StartEpisote start_scene;
 
-    [SerializeField] ParticleSystem particle;
+    [SerializeField] ParticleSystem particl1;
     void Start()
     {
-        particle.Stop();
         rgb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         animator.enabled = false;
@@ -50,10 +50,11 @@ public class PlayerMovment : MonoBehaviour
     {       
         if (speed <= 100f && fýrstTouchController == true)
         {
-            speed += 0.23f;
+            speed += 0.13f;
+            var emission = particl1.emission;
+            emission.rateOverTime = speed;
         }
     }
-
     void Update()
     {
         if (Input.touchCount > 0)       
@@ -81,15 +82,18 @@ public class PlayerMovment : MonoBehaviour
             rgb.velocity = Vector3.zero;
         }
 
-        SliderBar();
-
-
         if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {
             gameObject.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
             LimitForwed.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitBack.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
         }
+    }
+
+    private void LateUpdate()
+    {
+        float distance = finisLine.transform.position.z - myCharactertransform.transform.position.z;
+        mySlider.value = 1 - (distance / maxDistance);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -118,14 +122,7 @@ public class PlayerMovment : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            speed -= 25f;            
-            particle.transform.position = gameObject.transform.position;
-            particle.Play();
-            camershake.CameraShakesCall();
+            speed -= 25f;
         }
-    }
-    private void SliderBar()
-    {
-        mySlider.value = speed;
     }
 }

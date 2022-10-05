@@ -121,6 +121,8 @@ MonoBehaviour:
   firstPos: {fileID: 1646612709402040564}
   secondPos: {fileID: 1646612709337611368}
   speed: 6
+  particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
+    type: 3}
 --- !u!1001 &1125793340277722132
 PrefabInstance:
   m_ObjectHideFlags: 0

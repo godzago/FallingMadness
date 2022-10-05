@@ -242,6 +242,8 @@ MonoBehaviour:
   firstPos: {fileID: 7848528501390628042}
   secondPos: {fileID: 7848528500805839486}
   speed: 11
+  particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
+    type: 3}
 --- !u!95 &4164835300712114552
 Animator:
   serializedVersion: 3

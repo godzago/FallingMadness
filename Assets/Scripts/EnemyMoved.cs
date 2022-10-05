@@ -9,9 +9,11 @@ public class EnemyMoved : MonoBehaviour
 
     Vector3 nextPos;
 
+    [SerializeField] ParticleSystem particle;
     private void Start()
     {
-        nextPos = firstPos.position;    }
+        nextPos = firstPos.position;
+    }
 
     private void FixedUpdate()
     {
@@ -19,10 +21,22 @@ public class EnemyMoved : MonoBehaviour
 
             nextPos = secondPos.position;
 
-        if(transform.position == secondPos.position)
+        if (transform.position == secondPos.position)
+       
             nextPos = firstPos.position;
 
+
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gameObject.SetActive(false);
+            particle.transform.position = gameObject.transform.position;
+            particle.Play();
+        }
     }
 
     private void OnDrawGizmos()

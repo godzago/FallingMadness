@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         LastScore += 1;
         twoXtake = true;
-        particlesystem.Play();
+        particlesystem.Play();       
     }
 
     private void OnTriggerEnter(Collider other)

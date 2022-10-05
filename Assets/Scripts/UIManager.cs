@@ -122,9 +122,9 @@ public class UIManager : MonoBehaviour
 
     public void NextGame()
     {
-        if (Variables.Level == 6)
+        if (Variables.Level == 4)
         {
-            levelGenerate = Random.Range(0, 6);
+            levelGenerate = Random.Range(0, 4);
             SceneManager.LoadScene(levelGenerate);
         }
         else
