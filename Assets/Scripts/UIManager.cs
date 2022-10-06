@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject live_score;
     [SerializeField] GameObject currentPlayer;
 
+    [SerializeField] GameObject sliderBar;
+
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -100,6 +102,7 @@ public class UIManager : MonoBehaviour
         FınishCamera.SetActive(true);
         FınishPlayer.SetActive(true);
         live_score.SetActive(false);
+        sliderBar.SetActive(false);
     }
 
     public void loseArea()
@@ -112,6 +115,7 @@ public class UIManager : MonoBehaviour
         FınishCamera.SetActive(true);
         FınishPlayerLose.SetActive(true);
         live_score.SetActive(false);
+        sliderBar.SetActive(false);
         GameManager.Puan = 0;
     }
 
