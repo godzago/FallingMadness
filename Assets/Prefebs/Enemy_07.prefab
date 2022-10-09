@@ -125,8 +125,8 @@ GameObject:
   - component: {fileID: 7848528501212080748}
   - component: {fileID: 7848528501212080749}
   - component: {fileID: 7848528501212080750}
-  - component: {fileID: 7848528501212080751}
   - component: {fileID: 4164835300712114552}
+  - component: {fileID: 7556003245318169342}
   m_Layer: 0
   m_Name: HelicopterV1
   m_TagString: Enemy
@@ -227,23 +227,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2449682, y: 0.5720976, z: 0.3646109}
   m_Center: {x: -0.10284257, y: 0.3003007, z: 0.010600224}
---- !u!114 &7848528501212080751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7848528501212080753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97fee4a8a7bf9a43a6704e39a5e550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstPos: {fileID: 7848528501390628042}
-  secondPos: {fileID: 7848528500805839486}
-  speed: 11
-  particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
-    type: 3}
 --- !u!95 &4164835300712114552
 Animator:
   serializedVersion: 3
@@ -263,6 +246,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7556003245318169342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7848528501212080753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336c619d59622bc4c8ad4f4b4a3f0300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPos: {fileID: 7848528501390628042}
+  secondPos: {fileID: 7848528500805839486}
+  speed: 6
+  particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
+    type: 3}
 --- !u!1 &7848528501390628043
 GameObject:
   m_ObjectHideFlags: 0

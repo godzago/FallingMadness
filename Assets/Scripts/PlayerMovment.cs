@@ -48,9 +48,10 @@ public class PlayerMovment : MonoBehaviour
 
     private void FixedUpdate()
     {       
-        if (speed <= 100f && fýrstTouchController == true)
+        if (speed <= 150f && fýrstTouchController == true)
         {
-            speed += 0.13f;
+            speed += 0.15f;
+            Debug.Log("hýzýn su  " + speed);
             var emission = particl1.emission;
             emission.rateOverTime = speed;
         }
@@ -122,7 +123,7 @@ public class PlayerMovment : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            speed -= 25f;
+            speed -= 20f;
         }
     }
 }

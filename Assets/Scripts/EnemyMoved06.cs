@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoved : MonoBehaviour
+public class EnemyMoved06 : MonoBehaviour
 {
     [SerializeField] Transform firstPos, secondPos;
     [SerializeField] float speed;
@@ -17,19 +17,19 @@ public class EnemyMoved : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(transform.position == firstPos.position)
+        if (transform.position == firstPos.position)
         {
-            transform.rotation = Quaternion.Euler(90, -90, 0);
+            transform.rotation = Quaternion.Euler(0, 180, -90);
             nextPos = secondPos.position;
         }
-          
+
         if (transform.position == secondPos.position)
         {
-            transform.rotation = Quaternion.Euler(90, 90, 0);
-            nextPos = firstPos.position;           
+            transform.rotation = Quaternion.Euler(0, 180, 90);
+            nextPos = firstPos.position;
         }
-      
-        transform.position = Vector3.MoveTowards(transform.position , nextPos, speed * Time.deltaTime);
+
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -13,7 +13,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.3899546, y: 2.4164429, z: 3.9593475}
   m_Center: {x: 0.10464446, y: -0.37254843, z: 0.2650671}
---- !u!114 &979936838428873460
+--- !u!114 &7582377935603406249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,12 +22,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3865384983908883846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97fee4a8a7bf9a43a6704e39a5e550a, type: 3}
+  m_Script: {fileID: 11500000, guid: 45e0656d4e65e8747b94cbd574309544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstPos: {fileID: 4815079265587097599}
   secondPos: {fileID: 4815079265652542307}
-  speed: 8
+  speed: 6
   particle: {fileID: 4154367352984362205, guid: 02646a4d0db8efb40b961877cf06d876,
     type: 3}
 --- !u!1 &4815079265587097596
@@ -183,12 +183,12 @@ PrefabInstance:
     - target: {fileID: 918618916815058799, guid: 323885c14529a9142b1f9dbaabda8e4a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 918618916815058799, guid: 323885c14529a9142b1f9dbaabda8e4a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 918618916815058799, guid: 323885c14529a9142b1f9dbaabda8e4a,
         type: 3}
@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 918618916815058799, guid: 323885c14529a9142b1f9dbaabda8e4a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 918618916815058799, guid: 323885c14529a9142b1f9dbaabda8e4a,
         type: 3}
