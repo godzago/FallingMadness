@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private int live_score_int;
 
     [SerializeField] ParticleSystem particlesystem;
-    private void Awake()
+    private void Start()
     {
         particlesystem.Stop();
     }

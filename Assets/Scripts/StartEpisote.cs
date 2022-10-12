@@ -11,7 +11,6 @@ public class StartEpisote : MonoBehaviour
     [SerializeField] GameObject StartPlayer;
     [SerializeField] GameObject startUI;
     [SerializeField] GameObject SliderGameObject;
-
     [SerializeField] GameObject LiveScore;
 
     public void OnTriggerEnter(Collider other)

@@ -51,9 +51,8 @@ public class PlayerMovment : MonoBehaviour
         if (speed <= 150f && fýrstTouchController == true)
         {
             speed += 0.15f;
-            Debug.Log("hýzýn su  " + speed);
             var emission = particl1.emission;
-            emission.rateOverTime = speed;
+            emission.rateOverTime = speed / 2;
         }
     }
     void Update()
@@ -85,7 +84,7 @@ public class PlayerMovment : MonoBehaviour
 
         if (Variables.FirstTouch == 1 && fýrstTouchController == true && GameOver == false)
         {
-            gameObject.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
+            gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitForwed.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
             LimitBack.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
         }
@@ -101,7 +100,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Controller"))
         {
-            if (speed <= 100f)
+            if (speed <= 80f)
             {
                 UImanager.winArea();
                 fýrstTouchController = false;

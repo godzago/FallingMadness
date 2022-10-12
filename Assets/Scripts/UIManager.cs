@@ -28,6 +28,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject sliderBar;
 
+    [SerializeField] ParticleSystem fireParticle;
+    [SerializeField] ParticleSystem ScorParticle;
+
     private void Start()
     {   
         if (PlayerPrefs.HasKey("Sound") == false)
@@ -36,6 +39,8 @@ public class UIManager : MonoBehaviour
         }
 
         currentPlayer.SetActive(true);
+        fireParticle.Stop();
+        fireParticle.Stop();
     }
 
     public void Settings_Open()
@@ -81,12 +86,10 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetInt("Sound", 1);
     }
 
-
     void layoutgorupOpen()
     {
         layoutAnimator.SetTrigger("Slider_in");
     }
-
     public void layoutgorupClose()
     {
         layoutAnimator.SetTrigger("Slider_out");
@@ -103,6 +106,7 @@ public class UIManager : MonoBehaviour
         FınishPlayer.SetActive(true);
         live_score.SetActive(false);
         sliderBar.SetActive(false);
+        Invoke("fireParticleFucation", 2f);
     }
 
     public void loseArea()
@@ -117,12 +121,22 @@ public class UIManager : MonoBehaviour
         live_score.SetActive(false);
         sliderBar.SetActive(false);
         GameManager.Puan = 0;
+        Invoke("ScorParticleFucation", 2f);
     }
-
+    public void fireParticleFucation()
+    {
+        fireParticle.Play();
+        ScorParticle.Play();
+    }
+    public void ScorParticleFucation()
+    {
+        ScorParticle.Play();
+    }
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
     public void NextGame()
     {
